@@ -10,6 +10,29 @@
 
 <packaging>pom</packaging>
 
+<name>Kerbaya Plugins Parent</name>
+<description>Parent to define Maven plugins for Kerbaya artifacts</description>
+
+<url>https://github.com/Kerbaya/${project.artifactId}</url>
+
+<licenses>
+	<license>
+		<name>GNU General Public License v3.0 or later</name>
+		<url>https://www.gnu.org/licenses/gpl-3.0-standalone.html</url>
+	</license>
+</licenses>
+
+<scm>
+	<url>https://github.com/Kerbaya/${project.artifactId}/tree/${project.version}</url>
+</scm>
+
+<developers>
+	<developer>
+		<organization>Kerbaya Software</organization>
+		<organizationUrl>https://www.kerbaya.com</organizationUrl>
+	</developer>
+</developers>
+
 <build>
 	<pluginManagement>
 		<plugins>
@@ -978,8 +1001,27 @@
 				<artifactId>xslt-maven-plugin</artifactId>
 				<version>1.0</version>
 			</plugin>
+			<plugin>
+				<groupId>org.simplify4u.plugins</groupId>
+				<artifactId>sign-maven-plugin</artifactId>
+				<version>0.3.1</version>
+			</plugin>
 		</plugins>
 	</pluginManagement>
+	<plugins>
+		<plugin>
+			<groupId>org.simplify4u.plugins</groupId>
+			<artifactId>sign-maven-plugin</artifactId>
+			<inherited>false</inherited>
+			<executions>
+				<execution>
+					<goals>
+						<goal>sign</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
 </build>
 
 </project>
